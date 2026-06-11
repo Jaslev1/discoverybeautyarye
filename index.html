@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Discovery Beauty: Investor Overview</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
+<style>
+/* Gilroy substitute: load a close geometric sans. Using Montserrat as the rendering fallback for Gilroy since Gilroy is not a web font. */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+:root{
+  --indigo:#434371;
+  --indigo-dk:#2F2F4F;
+  --teal:#79AEA3;
+  --teal-dk:#557A72;
+  --teal-lt:#A1C6BF;
+  --lime:#B6EE4F;
+  --lime-lt:#CCF384;
+  --brown:#352E27;
+  --gray:#817A73;
+  --gray-lt:#B0AAA4;
+  --gray-xlt:#E2DFDB;
+  --body:#4A4440;
+  --paper:#FFFFFF;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:'Montserrat',sans-serif;
+  color:var(--body);
+  background:var(--paper);
+  line-height:1.6;
+  font-weight:400;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,h4,.numeral{font-family:'Abril Fatface',serif;font-weight:400;}
+
+/* ---------- NAV ---------- */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  background:rgba(47,47,79,0.96);
+  backdrop-filter:blur(8px);
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 36px;height:60px;
+}
+nav .brand{font-family:'Abril Fatface',serif;color:#fff;font-size:20px;letter-spacing:0.5px;}
+nav .brand span{color:var(--lime);}
+nav .links{display:flex;gap:26px;}
+nav .links a{
+  color:rgba(255,255,255,0.75);text-decoration:none;font-size:12.5px;
+  font-weight:500;letter-spacing:0.4px;text-transform:uppercase;transition:color 0.2s;
+}
+nav .links a:hover{color:var(--lime);}
+@media(max-width:860px){nav .links{display:none;}}
+
+/* ---------- LAYOUT ---------- */
+section{padding:84px 0;}
+.wrap{max-width:1080px;margin:0 auto;padding:0 40px;}
+.section-tag{
+  display:inline-block;font-family:'Montserrat';font-size:11.5px;font-weight:600;
+  letter-spacing:2px;text-transform:uppercase;color:var(--teal-dk);
+  margin-bottom:14px;
+}
+h2.section-title{font-size:40px;color:var(--indigo-dk);line-height:1.1;margin-bottom:8px;}
+.section-sub{font-size:16px;color:var(--gray);max-width:680px;margin-bottom:40px;font-weight:400;}
+.rule{height:4px;width:100%;background:linear-gradient(90deg,var(--teal),var(--lime));border:none;border-radius:2px;}
+
+/* ---------- HERO ---------- */
+.hero{
+  background:var(--indigo-dk);
+  color:#fff;padding:150px 0 90px;position:relative;overflow:hidden;
+}
+.hero::after{
+  content:"";position:absolute;right:-160px;top:-160px;width:520px;height:520px;
+  border-radius:50%;background:radial-gradient(circle,rgba(182,238,79,0.16),transparent 65%);
+}
+.hero .wrap{position:relative;z-index:2;}
+.hero .eyebrow{
+  font-size:12px;font-weight:600;letter-spacing:3px;text-transform:uppercase;
+  color:var(--lime);margin-bottom:22px;
+}
+.hero h1{font-size:72px;line-height:0.98;margin-bottom:24px;}
+.hero h1 .accent{color:var(--teal-lt);}
+.hero .lede{font-size:20px;max-width:660px;color:rgba(255,255,255,0.82);font-weight:300;margin-bottom:40px;}
+.hero .meta-row{display:flex;gap:46px;flex-wrap:wrap;margin-top:10px;}
+.hero .meta b{font-family:'Abril Fatface',serif;font-size:34px;color:var(--lime);display:block;line-height:1;}
+.hero .meta span{font-size:12.5px;color:rgba(255,255,255,0.6);letter-spacing:0.5px;}
+
+/* ---------- ONE-LINER STRIP ---------- */
+.thesis-strip{background:var(--indigo);color:#fff;padding:54px 0;}
+.thesis-strip .wrap{display:flex;align-items:center;gap:30px;}
+.thesis-strip .mark{
+  flex:0 0 6px;align-self:stretch;background:var(--lime);border-radius:3px;
+}
+.thesis-strip p{font-size:23px;line-height:1.45;font-weight:300;}
+.thesis-strip p b{font-weight:600;color:var(--lime-lt);}
+
+/* ---------- POSITIONING / WHAT IT IS ---------- */
+.combo-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:8px;border-radius:10px;overflow:hidden;border:1px solid var(--gray-xlt);}
+.combo-grid .cell{padding:26px 22px;background:#fff;border-right:1px solid var(--gray-xlt);}
+.combo-grid .cell:last-child{border-right:none;}
+.combo-grid .cell .ic{width:34px;height:34px;border-radius:8px;background:var(--teal);margin-bottom:14px;display:flex;align-items:center;justify-content:center;}
+.combo-grid .cell .ic.l{background:var(--lime);}
+.combo-grid .cell .ic.i{background:var(--indigo);}
+.combo-grid .cell .ic.t{background:var(--teal-dk);}
+.combo-grid .cell .ic span{color:#fff;font-weight:700;font-size:15px;font-family:'Montserrat';}
+.combo-grid .cell h4{font-family:'Montserrat';font-weight:700;font-size:14.5px;color:var(--indigo-dk);margin-bottom:6px;}
+.combo-grid .cell p{font-size:13px;color:var(--gray);line-height:1.5;}
+@media(max-width:860px){.combo-grid{grid-template-columns:1fr 1fr;}.combo-grid .cell:nth-child(2){border-right:none;}}
+
+.eq-line{text-align:center;margin:36px 0 4px;font-size:15px;color:var(--gray);font-weight:500;}
+.eq-line b{color:var(--indigo);font-weight:600;}
+
+/* ---------- WHY ECONOMICS / BASE ---------- */
+.alt{background:#FAF9F8;}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;}
+@media(max-width:860px){.two-col{grid-template-columns:1fr;gap:32px;}}
+.base-list{list-style:none;}
+.base-list li{
+  padding:13px 0 13px 30px;position:relative;border-bottom:1px solid var(--gray-xlt);
+  font-size:15px;color:var(--body);
+}
+.base-list li::before{
+  content:"";position:absolute;left:0;top:20px;width:9px;height:9px;background:var(--teal);border-radius:2px;
+}
+.base-list li b{color:var(--indigo-dk);font-weight:600;}
+.callout{
+  background:var(--indigo-dk);color:#fff;border-radius:12px;padding:34px 32px;position:relative;overflow:hidden;
+}
+.callout::before{content:"";position:absolute;left:0;top:0;bottom:0;width:5px;background:var(--lime);}
+.callout .k{font-family:'Abril Fatface',serif;font-size:48px;color:var(--lime);line-height:1;margin-bottom:10px;}
+.callout h4{font-family:'Montserrat';font-weight:600;font-size:16px;margin-bottom:10px;color:#fff;}
+.callout p{font-size:14px;color:rgba(255,255,255,0.78);font-weight:300;}
+
+/* ---------- MARKET SIZING ---------- */
+.funnel{display:flex;flex-direction:column;gap:14px;margin-top:8px;}
+.funnel .tier{
+  display:flex;align-items:center;border-radius:10px;padding:24px 30px;color:#fff;position:relative;
+}
+.funnel .tam{background:var(--indigo-dk);width:100%;}
+.funnel .sam{background:var(--teal-dk);width:78%;}
+.funnel .som{background:var(--lime);width:50%;color:var(--indigo-dk);}
+.funnel .tier .lbl{flex:0 0 70px;font-family:'Abril Fatface',serif;font-size:26px;}
+.funnel .tier .det{flex:1;}
+.funnel .tier .det .nm{font-weight:600;font-size:13px;letter-spacing:0.5px;text-transform:uppercase;opacity:0.85;}
+.funnel .tier .det .ds{font-size:14px;font-weight:300;opacity:0.9;margin-top:2px;}
+.funnel .som .det .ds{opacity:1;color:var(--indigo);}
+.funnel .tier .val{flex:0 0 auto;font-family:'Abril Fatface',serif;font-size:30px;text-align:right;}
+@media(max-width:860px){.funnel .sam,.funnel .som{width:100%;}.funnel .tier{flex-wrap:wrap;gap:6px;}.funnel .tier .val{flex-basis:100%;text-align:left;}}
+
+.method-note{font-size:13px;color:var(--gray);margin-top:20px;border-left:3px solid var(--teal-lt);padding-left:14px;line-height:1.55;}
+
+/* ---------- SOM TABLE ---------- */
+.tbl{width:100%;border-collapse:collapse;margin-top:10px;font-size:14.5px;}
+.tbl thead th{
+  background:var(--indigo-dk);color:#fff;text-align:left;padding:14px 18px;font-family:'Montserrat';
+  font-weight:600;font-size:12.5px;letter-spacing:0.6px;text-transform:uppercase;
+}
+.tbl thead th:last-child,.tbl tbody td:last-child{text-align:right;}
+.tbl tbody td{padding:14px 18px;border-bottom:1px solid var(--gray-xlt);color:var(--body);}
+.tbl tbody tr:nth-child(even){background:#FAF9F8;}
+.tbl tbody td.yr{font-weight:600;color:var(--indigo-dk);}
+.tbl tbody td .num{font-family:'Abril Fatface',serif;font-size:19px;color:var(--teal-dk);}
+.tbl tfoot td{padding:16px 18px;background:var(--lime);color:var(--indigo-dk);font-weight:600;}
+.tbl tfoot td .num{font-family:'Abril Fatface',serif;font-size:22px;color:var(--indigo-dk);}
+
+/* ---------- SWOT ---------- */
+.swot{display:grid;grid-template-columns:1fr 1fr;gap:22px;}
+@media(max-width:860px){.swot{grid-template-columns:1fr;}}
+.swot .panel{border-radius:12px;padding:28px 26px;border:1px solid var(--gray-xlt);background:#fff;}
+.swot .panel.s{border-top:5px solid var(--teal);}
+.swot .panel.w{border-top:5px solid var(--lime);}
+.swot .panel h3{font-family:'Montserrat';font-weight:700;font-size:15px;letter-spacing:0.6px;text-transform:uppercase;margin-bottom:18px;color:var(--indigo-dk);}
+.swot .panel .item{margin-bottom:16px;}
+.swot .panel .item:last-child{margin-bottom:0;}
+.swot .panel .item b{display:block;color:var(--indigo-dk);font-weight:600;font-size:14.5px;margin-bottom:3px;}
+.swot .panel .item span{font-size:13.5px;color:var(--gray);line-height:1.5;}
+
+/* ---------- DIFFERENTIATORS ---------- */
+.diff-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+@media(max-width:860px){.diff-grid{grid-template-columns:1fr;}}
+.diff{display:flex;gap:18px;padding:22px;border-radius:10px;background:#FAF9F8;border:1px solid var(--gray-xlt);}
+.diff .n{font-family:'Abril Fatface',serif;font-size:30px;color:var(--teal-lt);flex:0 0 40px;line-height:1;}
+.diff .tx b{display:block;font-family:'Montserrat';font-weight:600;color:var(--indigo-dk);font-size:15px;margin-bottom:4px;}
+.diff .tx span{font-size:13.5px;color:var(--gray);line-height:1.5;}
+
+/* ---------- RETAIL MEDIA FEATURE ---------- */
+.feature{background:var(--indigo-dk);color:#fff;border-radius:16px;padding:48px 44px;position:relative;overflow:hidden;}
+.feature::after{content:"";position:absolute;right:-120px;bottom:-120px;width:380px;height:380px;border-radius:50%;background:radial-gradient(circle,rgba(121,174,163,0.22),transparent 65%);}
+.feature .wrap-inner{position:relative;z-index:2;}
+.feature .ftag{font-size:11.5px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--lime);margin-bottom:12px;}
+.feature h3{font-size:32px;margin-bottom:16px;color:#fff;}
+.feature p{font-size:15.5px;color:rgba(255,255,255,0.82);font-weight:300;max-width:720px;margin-bottom:14px;}
+.feature .pill-row{display:flex;gap:14px;flex-wrap:wrap;margin-top:24px;}
+.feature .pill{background:rgba(255,255,255,0.08);border:1px solid rgba(182,238,79,0.4);border-radius:30px;padding:10px 20px;font-size:13px;font-weight:500;}
+.feature .pill b{color:var(--lime);}
+
+/* ---------- PHASING ---------- */
+.phases{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+@media(max-width:860px){.phases{grid-template-columns:1fr;}}
+.phase{border-radius:12px;border:1px solid var(--gray-xlt);overflow:hidden;}
+.phase .top{padding:18px 22px;color:#fff;}
+.phase.p1 .top{background:var(--teal-dk);}
+.phase.p2 .top{background:var(--indigo);}
+.phase.p3 .top{background:var(--indigo-dk);}
+.phase .top .ph{font-size:11.5px;font-weight:600;letter-spacing:1px;text-transform:uppercase;opacity:0.8;}
+.phase .top .nm{font-family:'Abril Fatface',serif;font-size:21px;margin-top:3px;}
+.phase .top .tm{font-size:12.5px;opacity:0.8;margin-top:2px;}
+.phase .bd{padding:22px;background:#fff;}
+.phase .bd p{font-size:13.5px;color:var(--gray);line-height:1.55;}
+.phase .bd p b{color:var(--indigo-dk);font-weight:600;}
+
+/* ---------- MARKETING ---------- */
+.mkt-list{list-style:none;counter-reset:m;}
+.mkt-list li{
+  position:relative;padding:18px 0 18px 54px;border-bottom:1px solid var(--gray-xlt);font-size:15px;color:var(--body);
+}
+.mkt-list li::before{
+  counter-increment:m;content:counter(m);position:absolute;left:0;top:16px;
+  width:34px;height:34px;background:var(--indigo);color:#fff;border-radius:8px;
+  display:flex;align-items:center;justify-content:center;font-family:'Abril Fatface',serif;font-size:16px;
+}
+.mkt-list li b{color:var(--indigo-dk);font-weight:600;}
+
+/* ---------- EXIT ---------- */
+.exit-grid{display:grid;grid-template-columns:1.1fr 0.9fr;gap:40px;align-items:center;}
+@media(max-width:860px){.exit-grid{grid-template-columns:1fr;}}
+.exit-metrics{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.exit-metrics .m{background:#FAF9F8;border:1px solid var(--gray-xlt);border-radius:10px;padding:22px;}
+.exit-metrics .m .num{font-family:'Abril Fatface',serif;font-size:30px;color:var(--teal-dk);line-height:1;}
+.exit-metrics .m .lb{font-size:12.5px;color:var(--gray);margin-top:6px;}
+
+/* ---------- RISKS ---------- */
+.risk{display:grid;grid-template-columns:1fr;gap:0;border:1px solid var(--gray-xlt);border-radius:12px;overflow:hidden;}
+.risk .row{display:grid;grid-template-columns:0.9fr 1.1fr;border-bottom:1px solid var(--gray-xlt);}
+.risk .row:last-child{border-bottom:none;}
+.risk .row .rk{padding:18px 22px;background:#FAF9F8;font-weight:600;color:var(--indigo-dk);font-size:14.5px;display:flex;align-items:center;}
+.risk .row .mt{padding:18px 22px;font-size:14px;color:var(--gray);line-height:1.5;}
+@media(max-width:680px){.risk .row{grid-template-columns:1fr;}.risk .row .rk{border-bottom:1px solid var(--gray-xlt);}}
+
+/* ---------- FOOTER ---------- */
+footer{background:var(--brown);color:rgba(255,255,255,0.6);padding:44px 0;font-size:12.5px;}
+footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
+footer .lime-strip{height:4px;background:var(--lime);width:100%;}
+footer b{color:rgba(255,255,255,0.85);font-weight:600;}
+
+.lead-para{font-size:16px;color:var(--body);line-height:1.7;max-width:760px;}
+.lead-para b{color:var(--indigo-dk);font-weight:600;}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="brand">Discovery <span>Beauty</span></div>
+  <div class="links">
+    <a href="#thesis">Thesis</a>
+    <a href="#market">Market</a>
+    <a href="#model">Model</a>
+    <a href="#media">Retail Media</a>
+    <a href="#roadmap">Roadmap</a>
+    <a href="#exit">Exit</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Investor Overview : Confidential</div>
+    <h1>The beauty business<br>that runs on <span class="accent">membership</span>.</h1>
+    <p class="lede">A digital-first, membership-powered beauty commerce platform built off Discovery's affluent, female-skewing base: priced for the aspirational middle, run independently, designed to compound into a data and media business.</p>
+    <div class="meta-row">
+      <div class="meta"><b>R1.5bn+</b><span>Year 5 revenue potential</span></div>
+      <div class="meta"><b>1.3m+</b><span>Warm member base at launch</span></div>
+      <div class="meta"><b>R22-26bn</b><span>Serviceable market</span></div>
+      <div class="meta"><b>10-15%</b><span>Target EBITDA at scale</span></div>
+    </div>
+  </div>
+</header>
+
+<!-- THESIS STRIP -->
+<div class="thesis-strip" id="thesis">
+  <div class="wrap">
+    <div class="mark"></div>
+    <p>This is not a beauty retailer. It is a <b>beauty retailer, loyalty platform, retail media network and influencer commerce platform</b> combined into one business: launched off the best customer segment in South Africa.</p>
+  </div>
+</div>
+
+<!-- WHAT IT IS -->
+<section>
+  <div class="wrap">
+    <span class="section-tag">The Concept</span>
+    <h2 class="section-title">Four businesses in one</h2>
+    <p class="section-sub">The closest analogue is not Sephora. The value sits in stacking four models on a base that no pure-play competitor can access: an affluent, digitally engaged, rewards-driven membership.</p>
+    <div class="combo-grid">
+      <div class="cell">
+        <div class="ic t"><span>1</span></div>
+        <h4>Beauty Retailer</h4>
+        <p>Edited, mid-to-premium assortment across skincare, colour, fragrance and prestige toiletries.</p>
+      </div>
+      <div class="cell">
+        <div class="ic l"><span>2</span></div>
+        <h4>Loyalty Platform</h4>
+        <p>Dynamic member pricing tied to Vitality status: the mechanic incumbents cannot replicate.</p>
+      </div>
+      <div class="cell">
+        <div class="ic i"><span>3</span></div>
+        <h4>Retail Media Network</h4>
+        <p>First-party transaction and loyalty data sold back to the brands that spend most on marketing.</p>
+      </div>
+      <div class="cell">
+        <div class="ic"><span>4</span></div>
+        <h4>Influencer Commerce</h4>
+        <p>Creator-led discovery and experiential studios engineered as content engines from day one.</p>
+      </div>
+    </div>
+    <p class="eq-line">Retailer, <b>then</b> loyalty, <b>then</b> media, <b>then</b> creator commerce: on a pre-qualified affluent base</p>
+  </div>
+</section>
+
+<!-- WHY ECONOMICS IMPROVE -->
+<section class="alt" id="base">
+  <div class="wrap">
+    <span class="section-tag">Why The Economics Work</span>
+    <h2 class="section-title">You are not starting from zero</h2>
+    <p class="section-sub">Discovery Bank customers are arguably the best consumer segment in the country, and the business begins with access to all of them.</p>
+    <div class="two-col">
+      <ul class="base-list">
+        <li><b>Affluent</b> and concentrated in major metros</li>
+        <li><b>Digitally engaged</b> and frequent online shoppers</li>
+        <li><b>Rewards-driven</b> by design, through Vitality</li>
+        <li><b>High credit quality</b>, above-average discretionary spend</li>
+        <li><b>Female-skewing</b> primary shoppers: the core beauty buyer</li>
+        <li>Reachable through <b>owned channels</b> at near-zero acquisition cost</li>
+      </ul>
+      <div class="callout">
+        <div class="k">1.3m+</div>
+        <h4>Discovery Bank clients at launch</h4>
+        <p>Plus a wider pool of adult Discovery customers and millions of Vitality participants. The bank is adding roughly 1,500 clients a day and skews affluent: this is the warm base that rewrites the unit economics of a new beauty venture.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MARKET SIZING -->
+<section id="market">
+  <div class="wrap">
+    <span class="section-tag">Market Sizing</span>
+    <h2 class="section-title">TAM, SAM, SOM</h2>
+    <p class="section-sub">Total SA beauty and personal care is the outer envelope. The relevant prize is the mid-to-premium discretionary slice, then the share realistically captured through the Discovery ecosystem.</p>
+    <div class="funnel">
+      <div class="tier tam">
+        <div class="lbl">TAM</div>
+        <div class="det">
+          <div class="nm">Total Addressable Market</div>
+          <div class="ds">All SA beauty and personal care: skincare, colour, fragrance, toiletries, grooming</div>
+        </div>
+        <div class="val">R77bn</div>
+      </div>
+      <div class="tier sam">
+        <div class="lbl">SAM</div>
+        <div class="det">
+          <div class="nm">Serviceable Available Market</div>
+          <div class="ds">Mid-to-premium discretionary beauty bought by the upper-LSM, urban, digital consumer</div>
+        </div>
+        <div class="val">R22-26bn</div>
+      </div>
+      <div class="tier som">
+        <div class="lbl">SOM</div>
+        <div class="det">
+          <div class="nm">Serviceable Obtainable Market</div>
+          <div class="ds">Share captured through the Discovery base via member pricing and owned reach</div>
+        </div>
+        <div class="val">R1.5-2.0bn</div>
+      </div>
+    </div>
+    <p class="method-note"><b>Method:</b> Beauty market figures for SA vary by source and definition. Euromonitor put total SA beauty and personal care at roughly R77.3bn for 2025, forecast to reach R98.2bn by 2028. Premium brands sat near R9.6bn and the prestige segment near R9.5bn in 2024, with super-premium near R2.7bn: adding the aspirational upper-mass tier this concept serves builds the R22-26bn SAM. TAM is the theoretical ceiling, most of it won by mass toiletries through Clicks, Dis-Chem and grocery.</p>
+  </div>
+</section>
+
+<!-- SOM BUILD -->
+<section class="alt" id="model">
+  <div class="wrap">
+    <span class="section-tag">The Capture Model</span>
+    <h2 class="section-title">A defensible path to R1.9bn</h2>
+    <p class="section-sub">This is not organic foot traffic. It is a pre-qualified, affluent, female-biased base with a financial incentive to consolidate spend, plus owned digital reach at near-zero acquisition cost.</p>
+    <table class="tbl">
+      <thead>
+        <tr>
+          <th>Horizon</th>
+          <th>Active member shoppers</th>
+          <th>Avg annual in-scope spend</th>
+          <th>Capture</th>
+          <th>Revenue</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="yr">Year 1</td>
+          <td>90,000</td>
+          <td>R6,500</td>
+          <td>35%</td>
+          <td><span class="num">~R205m</span></td>
+        </tr>
+        <tr>
+          <td class="yr">Year 3</td>
+          <td>260,000</td>
+          <td>R7,500</td>
+          <td>45%</td>
+          <td><span class="num">~R880m</span></td>
+        </tr>
+        <tr>
+          <td class="yr">Year 5</td>
+          <td>430,000</td>
+          <td>R8,500</td>
+          <td>52%</td>
+          <td><span class="num">~R1.9bn</span></td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="4">Year 5 SOM : roughly 7 to 9% of SAM</td>
+          <td><span class="num">~R1.9bn</span></td>
+        </tr>
+      </tfoot>
+    </table>
+    <p class="method-note">For comparison, Woolworths' beauty division more than doubled to over R1bn in two years off its existing customer base. This model has a comparable warm-base dynamic with a sharper loyalty hook, so a R1.5bn to R2.0bn five-year revenue range is aggressive but defensible.</p>
+  </div>
+</section>
+
+<!-- THE KILLER FEATURE: RETAIL MEDIA + DYNAMIC PRICING -->
+<section id="media">
+  <div class="wrap">
+    <div class="feature">
+      <div class="wrap-inner">
+        <div class="ftag">The Real Upside</div>
+        <h3>The business is data, not just product</h3>
+        <p>Beauty brands carry some of the highest marketing spend ratios anywhere. L'Oreal, Estee Lauder, Coty, Puig, Shiseido, Unilever Prestige and Beiersdorf spend aggressively to influence purchase. Once the platform holds 500,000+ customers with loyalty data, transaction data and digital traffic, it becomes a media platform those brands pay to reach.</p>
+        <p>Retail media could become <b style="color:var(--lime)">10 to 20% of EBITDA</b> despite being a small percentage of revenue. Layered on top: dynamic member pricing that consumers grasp instantly and that Clicks and Dis-Chem cannot match.</p>
+        <div class="pill-row">
+          <div class="pill">Your Vitality status unlocks <b>8% off premium skincare</b></div>
+          <div class="pill">Spend R1,500, earn <b>5,000 Vitality points</b></div>
+          <div class="pill">Reach Gold to <b>unlock fragrance pricing</b></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DIFFERENTIATORS -->
+<section class="alt">
+  <div class="wrap">
+    <span class="section-tag">Positioning</span>
+    <h2 class="section-title">One tier below Sephora, a clear step above the pharmacy</h2>
+    <p class="section-sub">Aspirational but attainable. The environment does the heavy lifting: contemporary, warm, well-lit, edited ranges, knowledgeable but non-pushy advisory. Not stripped down, not intimidating.</p>
+    <div class="diff-grid">
+      <div class="diff"><div class="n">01</div><div class="tx"><b>Member-priced beauty</b><span>The only place where being a Discovery member makes you visibly better off at the till, every visit.</span></div></div>
+      <div class="diff"><div class="n">02</div><div class="tx"><b>Behavioural rewards crossover</b><span>Beauty purchases feed Vitality status, and status unlocks beauty pricing: a flywheel no pure-play retailer has.</span></div></div>
+      <div class="diff"><div class="n">03</div><div class="tx"><b>Curated, not cluttered</b><span>An edited assortment that signals taste, versus the wall-of-SKUs pharmacy model.</span></div></div>
+      <div class="diff"><div class="n">04</div><div class="tx"><b>Content-led, influencer-native</b><span>Built for digital discovery from day one, not retrofitted onto a legacy retail format.</span></div></div>
+      <div class="diff"><div class="n">05</div><div class="tx"><b>Phygital loyalty</b><span>One seamless identity across app, online and studio: the wallet and the beauty profile as a single record.</span></div></div>
+      <div class="diff"><div class="n">06</div><div class="tx"><b>Trust transfer</b><span>Discovery's brand equity de-risks a new name on quality and authenticity in a market wary of counterfeits.</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- SWOT -->
+<section>
+  <div class="wrap">
+    <span class="section-tag">Honest Assessment</span>
+    <h2 class="section-title">Strengths and weaknesses</h2>
+    <p class="section-sub">The base is the moat. The execution risk sits in operating a retail discipline that is genuinely different from banking.</p>
+    <div class="swot">
+      <div class="panel s">
+        <h3>Strengths</h3>
+        <div class="item"><b>Captive, high-quality demand</b><span>No cold-start CAC problem. Affluent, engaged, female-skewed: exactly the beauty buyer. Owned channels carry the message free.</span></div>
+        <div class="item"><b>Loyalty as moat</b><span>Dynamic, behaviour-linked pricing part-funded by the bank's engagement economics: a structural edge competitors cannot match.</span></div>
+        <div class="item"><b>Margin headroom</b><span>Beauty's frequency and margin profile makes the 3 to 5% give-back affordable and cross-subsidises member engagement.</span></div>
+        <div class="item"><b>Whitespace</b><span>ARC and Skins own the top. Clicks, Dis-Chem and grocery own the bottom. The aspirational-affordable middle is under-served.</span></div>
+      </div>
+      <div class="panel w">
+        <h3>Weaknesses &amp; Risks</h3>
+        <div class="item"><b>Beauty is not banking</b><span>Merchandising, buying, advisory and inventory are a different discipline. Needs dedicated retail leadership, not a bank secondment.</span></div>
+        <div class="item"><b>Supply and brand access</b><span>Prestige houses gate distribution. Securing desirable brands against incumbents with long relationships is the hardest commercial problem.</span></div>
+        <div class="item"><b>Base concentration</b><span>Over-reliance on Discovery members caps the ceiling. Non-member acquisition must start early.</span></div>
+        <div class="item"><b>Channel and macro</b><span>Brand-dilution risk if tied too tightly to the bank, plus discretionary softness in downturns.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ROADMAP -->
+<section class="alt" id="roadmap">
+  <div class="wrap">
+    <span class="section-tag">Strategy &amp; Approach</span>
+    <h2 class="section-title">Studios, not stores</h2>
+    <p class="section-sub">Structured as a JV: Discovery Bank as anchor shareholder and demand partner, an independent OpCo with its own retail leadership, P&amp;L and brand. The bank provides the base, the data rails, the loyalty engine and capital. Do not launch 30 to 50 traditional stores: launch digital-first, then a handful of experiential studios that double as content engines.</p>
+    <div class="phases">
+      <div class="phase p1">
+        <div class="top">
+          <div class="ph">Phase 1</div>
+          <div class="nm">Digital-first</div>
+          <div class="tm">0 to 12 months</div>
+        </div>
+        <div class="bd"><p>Launch <b>e-commerce</b> plus one or two flagship studios in Sandton and Cape Town. Prove the loyalty mechanic and the basket. Lower capital risk, faster data.</p></div>
+      </div>
+      <div class="phase p2">
+        <div class="top">
+          <div class="ph">Phase 2</div>
+          <div class="nm">Studio rollout</div>
+          <div class="tm">12 to 36 months</div>
+        </div>
+        <div class="bd"><p>Expand to <b>3 to 5 experiential studios</b> (300 to 500 sqm: consultations, testing, events, influencer appearances, click-and-collect). Deepen owned-brand for margin.</p></div>
+      </div>
+      <div class="phase p3">
+        <div class="top">
+          <div class="ph">Phase 3</div>
+          <div class="nm">Scale &amp; broaden</div>
+          <div class="tm">36 months +</div>
+        </div>
+        <div class="bd"><p>Open the model to <b>non-members</b> on standard pricing, scale retail media, push owned-brand and partnership ranges. De-risk from base dependency.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MARKETING -->
+<section>
+  <div class="wrap">
+    <span class="section-tag">Go To Market</span>
+    <h2 class="section-title">Built for creator-led discovery</h2>
+    <p class="section-sub">The Discovery base is the launch audience, not the whole market. Marketing runs on first-party data and a creator strategy treated as a primary channel, not a campaign line.</p>
+    <ul class="mkt-list">
+      <li><b>Segment the base, do not blast it.</b> Split by Vitality status, life-stage and predicted category affinity, then run always-on CRM with offer personalisation off transaction data.</li>
+      <li><b>Creator strategy as a channel.</b> SA beauty discovery is creator-led: a tiered roster (mega for reach, mid and micro for conversion) on long-term retainers, not one-off posts.</li>
+      <li><b>Studio-as-content.</b> Design the environment to be shot and shared. The space is a media asset, not just a point of sale.</li>
+      <li><b>App-engineered sampling.</b> Members redeem trial in-studio, closing the digital-to-physical loop and generating first-party intent data.</li>
+      <li><b>Launch beats around exclusives.</b> A brand or range available only here gives both PR and a concrete reason to switch primary spend.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- EXIT -->
+<section class="alt" id="exit">
+  <div class="wrap">
+    <span class="section-tag">Why It Is Interesting</span>
+    <h2 class="section-title">A commerce platform, not a retailer</h2>
+    <div class="exit-grid">
+      <p class="lead-para">Get to <b>R1.5bn revenue</b> at <b>10 to 15% EBITDA</b> with strong loyalty, strong digital engagement and meaningful retail media revenue, and the business stops looking like a South African retailer. It looks like a commerce platform: customer data, loyalty economics and recurring beauty spend. That is where <b>valuation multiples expand significantly</b> beyond traditional retail, and where the real return sits.</p>
+      <div class="exit-metrics">
+        <div class="m"><div class="num">R1.5bn</div><div class="lb">Revenue at scale</div></div>
+        <div class="m"><div class="num">10-15%</div><div class="lb">Target EBITDA margin</div></div>
+        <div class="m"><div class="num">10-20%</div><div class="lb">Of EBITDA from retail media</div></div>
+        <div class="m"><div class="num">Platform</div><div class="lb">Multiple, not retail multiple</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RISKS / MITIGATIONS -->
+<section>
+  <div class="wrap">
+    <span class="section-tag">Risks &amp; Mitigations</span>
+    <h2 class="section-title">What we are watching</h2>
+    <p class="section-sub">The four issues most likely to bend the plan, and the moves that contain them.</p>
+    <div class="risk">
+      <div class="row"><div class="rk">Brand access</div><div class="mt">Start brand-partner conversations before the build. Lead with the captive affluent base as the pitch. Mitigate with owned-brand to guarantee differentiated margin.</div></div>
+      <div class="row"><div class="rk">Operating capability</div><div class="mt">Hire retail-native leadership early. Do not run this as a bank project: the JV structure exists to keep the operating discipline separate.</div></div>
+      <div class="row"><div class="rk">Give-back economics</div><div class="mt">Model the 3 to 5% against blended margin and the bank's engagement uplift. Cap or tier it by status so it stays affordable at scale.</div></div>
+      <div class="row"><div class="rk">Base dependency</div><div class="mt">Set a non-member revenue target from Phase 2 to force outward growth and protect the eventual multiple.</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="lime-strip"></div>
+<footer>
+  <div class="wrap">
+    <div>Discovery Beauty : Membership-powered beauty commerce</div>
+    <div><b>Prosper &amp; Partners</b> : Strategy &amp; Growth Advisory : Confidential investor overview</div>
+  </div>
+</footer>
+
+</body>
+</html>
