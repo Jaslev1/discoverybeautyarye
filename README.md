@@ -25,10 +25,12 @@ Then visit the printed local URL.
 
 ## Deploy to Vercel
 
+`vercel.json` already pins the framework to none and the output directory to the repo root, so the dashboard should not ask for a `public` folder. If it still does, set the values in step 3 manually.
+
 **Option A: Vercel dashboard**
 1. Push this folder to a GitHub repo (see below).
 2. In Vercel, click **Add New > Project**, import the repo.
-3. Framework preset: **Other**. Build command: leave empty. Output directory: `.` (root).
+3. Framework preset: **Other**. Build command: **leave empty / Override off**. Output directory: `.` (a single dot, meaning the repo root).
 4. Deploy.
 
 **Option B: Vercel CLI**
