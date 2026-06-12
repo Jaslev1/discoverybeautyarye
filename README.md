@@ -57,15 +57,15 @@ GitHub Pages also works: in repo **Settings > Pages**, set source to the `main` 
 
 Headers use **Abril Fatface** and body uses **Montserrat**, both loaded from Google Fonts. Montserrat is a rendering stand-in for **Gilroy** (the licensed Prosper & Partners body font). For external distribution, replace the Montserrat `@import` with your licensed Gilroy `@font-face` files and update the `font-family` references.
 
-## Palette (Prosper & Partners)
+## Palette (Discovery Beauty)
 
-| Token | Hex |
-|---|---|
-| Indigo | `#434371` / `#2F2F4F` |
-| Teal | `#79AEA3` / `#557A72` / `#A1C6BF` |
-| Lime (accent) | `#B6EE4F` / `#CCF384` |
-| Brown (footer) | `#352E27` |
-| Gray | `#817A73` / `#B0AAA4` / `#E2DFDB` |
+| Token | Hex | Role |
+|---|---|---|
+| Rose-nude | `#EBD4CB` | Hairlines, soft backgrounds |
+| Dusty rose | `#DA9F93` | Mid-tone, soft accent |
+| Raspberry | `#B6465F` | Primary live accent |
+| Wine | `#890620` | Primary brand dark |
+| Oxblood | `#2C0703` | Deepest dark, heroes, footer |
 
 ---
 
