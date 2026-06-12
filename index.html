@@ -44,7 +44,7 @@ h1,h2,h3,h4,.numeral{font-family:'Abril Fatface',serif;font-weight:400;}
 /* ---------- NAV ---------- */
 nav{
   position:fixed;top:0;left:0;right:0;z-index:100;
-  background:rgba(47,47,79,0.96);
+  background:rgba(44,7,3,0.97);
   backdrop-filter:blur(8px);
   display:flex;align-items:center;justify-content:space-between;
   padding:0 36px;height:60px;
@@ -182,11 +182,25 @@ h2.section-title{font-size:40px;color:var(--indigo-dk);line-height:1.1;margin-bo
 .swot .panel .item b{display:block;color:var(--indigo-dk);font-weight:600;font-size:14.5px;margin-bottom:3px;}
 .swot .panel .item span{font-size:13.5px;color:var(--gray);line-height:1.5;}
 
+/* ---------- POSITIONING COMPARE ---------- */
+.pos-compare{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:0 0 30px;}
+@media(max-width:860px){.pos-compare{grid-template-columns:1fr;}}
+.pc-card{border-radius:12px;padding:28px 26px;color:#fff;position:relative;overflow:hidden;}
+.pc-card.pharmacy{background:var(--indigo);}        /* wine 890620 */
+.pc-card.woolies{background:var(--indigo-dk);}       /* oxblood */
+.pc-card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:5px;background:var(--lime);}
+.pc-card .pc-h{font-family:'Montserrat';font-weight:700;font-size:13px;letter-spacing:1px;text-transform:uppercase;color:var(--lime-lt);margin-bottom:12px;}
+.pc-card p{font-size:14.5px;line-height:1.6;color:rgba(255,255,255,0.86);font-weight:300;}
+
 /* ---------- DIFFERENTIATORS ---------- */
 .diff-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
 @media(max-width:860px){.diff-grid{grid-template-columns:1fr;}}
 .diff{display:flex;gap:18px;padding:22px;border-radius:10px;background:#FBF4F1;border:1px solid var(--gray-xlt);}
-.diff .n{font-family:'Abril Fatface',serif;font-size:30px;color:var(--teal-lt);flex:0 0 40px;line-height:1;}
+.diff:first-child{background:var(--indigo);border-color:var(--indigo);}
+.diff:first-child .n{color:rgba(255,255,255,0.55);}
+.diff:first-child .tx b{color:#fff;}
+.diff:first-child .tx span{color:rgba(255,255,255,0.82);}
+.diff .n{font-family:'Abril Fatface',serif;font-size:30px;color:var(--indigo);flex:0 0 40px;line-height:1;}
 .diff .tx b{display:block;font-family:'Montserrat';font-weight:600;color:var(--indigo-dk);font-size:15px;margin-bottom:4px;}
 .diff .tx span{font-size:13.5px;color:var(--gray);line-height:1.5;}
 
@@ -278,7 +292,7 @@ footer b{color:rgba(255,255,255,0.85);font-weight:600;}
       <div class="meta"><b>R1.5bn+</b><span>Year 5 revenue potential</span></div>
       <div class="meta"><b>1.3m+</b><span>Warm member base at launch</span></div>
       <div class="meta"><b>R22-26bn</b><span>Serviceable market</span></div>
-      <div class="meta"><b>10-15%</b><span>Target EBITDA at scale</span></div>
+      <div class="meta"><b>12-18%</b><span>EBITDA at scale, after give-back</span></div>
     </div>
   </div>
 </header>
@@ -296,7 +310,7 @@ footer b{color:rgba(255,255,255,0.85);font-weight:600;}
   <div class="wrap">
     <span class="section-tag">The Concept</span>
     <h2 class="section-title">Four businesses in one</h2>
-    <p class="section-sub">The closest analogue is not Sephora. The value sits in stacking four models on a base that no pure-play competitor can access: an affluent, digitally engaged, rewards-driven membership.</p>
+    <p class="section-sub">The closest retail analogue is Ulta, not Sephora. But the real value sits in stacking four models on a base that no pure-play competitor can access: an affluent, digitally engaged, rewards-driven membership.</p>
     <div class="combo-grid">
       <div class="cell">
         <div class="ic t"><span>1</span></div>
@@ -456,15 +470,25 @@ footer b{color:rgba(255,255,255,0.85);font-weight:600;}
 <section class="alt">
   <div class="wrap">
     <span class="section-tag">Positioning</span>
-    <h2 class="section-title">One tier below Sephora, a clear step above the pharmacy</h2>
-    <p class="section-sub">Aspirational but attainable. The environment does the heavy lifting: contemporary, warm, well-lit, edited ranges, knowledgeable but non-pushy advisory. Not stripped down, not intimidating.</p>
+    <h2 class="section-title">Closer to Ulta than Sephora: mid-market reach, prestige feel</h2>
+    <p class="section-sub">The reference point is Ulta: an accessible, aspirational beauty destination that spans mass to prestige under one roof, rather than the rarefied, luxury-only Sephora model. Aspirational but attainable. The environment does the heavy lifting: contemporary, warm, well-lit, edited ranges, knowledgeable but non-pushy advisory. Not stripped down, not intimidating.</p>
+    <div class="pos-compare">
+      <div class="pc-card pharmacy">
+        <div class="pc-h">Versus the pharmacy brands</div>
+        <p>Clicks and Dis-Chem win on convenience and price, but their beauty branding is functional and forgettable. The opening is magnetic, break-out branding and communications: a beauty name people actually want to be seen carrying, with the kind of creative confidence the pharmacy aisle structurally cannot produce.</p>
+      </div>
+      <div class="pc-card woolies">
+        <div class="pc-h">Versus Woolworths Beauty</div>
+        <p>Woolworths is the closest local quality benchmark, but it reads established and skews older. This targets a younger consumer with a fresher, more contemporary experience, matched on product quality but sharper on culture, content and store feel.</p>
+      </div>
+    </div>
     <div class="diff-grid">
-      <div class="diff"><div class="n">01</div><div class="tx"><b>Member-priced beauty</b><span>The only place where being a Discovery member makes you visibly better off at the till, every visit.</span></div></div>
-      <div class="diff"><div class="n">02</div><div class="tx"><b>Behavioural rewards crossover</b><span>Beauty purchases feed Vitality status, and status unlocks beauty pricing: a flywheel no pure-play retailer has.</span></div></div>
-      <div class="diff"><div class="n">03</div><div class="tx"><b>Curated, not cluttered</b><span>An edited assortment that signals taste, versus the wall-of-SKUs pharmacy model.</span></div></div>
-      <div class="diff"><div class="n">04</div><div class="tx"><b>Content-led, influencer-native</b><span>Built for digital discovery from day one, not retrofitted onto a legacy retail format.</span></div></div>
-      <div class="diff"><div class="n">05</div><div class="tx"><b>Phygital loyalty</b><span>One seamless identity across app, online and studio: the wallet and the beauty profile as a single record.</span></div></div>
-      <div class="diff"><div class="n">06</div><div class="tx"><b>Trust transfer</b><span>Discovery's brand equity de-risks a new name on quality and authenticity in a market wary of counterfeits.</span></div></div>
+      <div class="diff"><div class="n">01</div><div class="tx"><b>Magnetic, break-out branding</b><span>Comms and identity built to be desired and shared, not just shopped: the single biggest gap left open by every pharmacy beauty offer.</span></div></div>
+      <div class="diff"><div class="n">02</div><div class="tx"><b>Member-priced beauty</b><span>The only place where being a Discovery member makes you visibly better off at the till, every visit.</span></div></div>
+      <div class="diff"><div class="n">03</div><div class="tx"><b>Behavioural rewards crossover</b><span>Beauty purchases feed Vitality status, and status unlocks beauty pricing: a flywheel no pure-play retailer has.</span></div></div>
+      <div class="diff"><div class="n">04</div><div class="tx"><b>Curated, not cluttered</b><span>An edited assortment that signals taste, versus the wall-of-SKUs pharmacy model.</span></div></div>
+      <div class="diff"><div class="n">05</div><div class="tx"><b>Content-led, influencer-native</b><span>Built for digital discovery from day one, not retrofitted onto a legacy retail format.</span></div></div>
+      <div class="diff"><div class="n">06</div><div class="tx"><b>Phygital loyalty</b><span>One seamless identity across app, online and studio: the wallet and the beauty profile as a single record.</span></div></div>
     </div>
   </div>
 </section>
@@ -549,12 +573,12 @@ footer b{color:rgba(255,255,255,0.85);font-weight:600;}
 <section class="alt" id="exit">
   <div class="wrap">
     <span class="section-tag">Why It Is Interesting</span>
-    <h2 class="section-title">A commerce platform, not a retailer</h2>
+    <h2 class="section-title">A commerce platform, more than a retailer</h2>
     <div class="exit-grid">
-      <p class="lead-para">Get to <b>R1.5bn revenue</b> at <b>10 to 15% EBITDA</b> with strong loyalty, strong digital engagement and meaningful retail media revenue, and the business stops looking like a South African retailer. It looks like a commerce platform: customer data, loyalty economics and recurring beauty spend. That is where <b>valuation multiples expand significantly</b> beyond traditional retail, and where the real return sits.</p>
+      <p class="lead-para">The base case is <b>R1.5bn revenue</b> at <b>10 to 15% EBITDA</b>, stated <b>after</b> the 3 to 5% member give-back: the give-back is a price reduction already absorbed in that margin, not an extra cost on top of it. The lever that pushes it to <b>12 to 18%</b> is mix: retail media carries near-pure margin, and owned-brand beauty runs well above the margin on reselling third-party prestige lines. As both grow as a share of revenue, blended EBITDA rises even with the give-back held flat. At that point the business stops looking like a South African retailer: it looks like a commerce platform built on customer data, loyalty economics and recurring beauty spend, which is where <b>valuation multiples expand significantly</b> beyond traditional retail.</p>
       <div class="exit-metrics">
         <div class="m"><div class="num">R1.5bn</div><div class="lb">Revenue at scale</div></div>
-        <div class="m"><div class="num">10-15%</div><div class="lb">Target EBITDA margin</div></div>
+        <div class="m"><div class="num">12-18%</div><div class="lb">EBITDA at scale, after give-back</div></div>
         <div class="m"><div class="num">10-20%</div><div class="lb">Of EBITDA from retail media</div></div>
         <div class="m"><div class="num">Platform</div><div class="lb">Multiple, not retail multiple</div></div>
       </div>
@@ -581,7 +605,7 @@ footer b{color:rgba(255,255,255,0.85);font-weight:600;}
 <footer>
   <div class="wrap">
     <div>Discovery Beauty : Membership-powered beauty commerce</div>
-    <div><b>Prosper &amp; Partners</b> : Strategy &amp; Growth Advisory : Confidential investor overview</div>
+    <div><b>Jason Levin</b> : Confidential investor overview</div>
   </div>
 </footer>
 
