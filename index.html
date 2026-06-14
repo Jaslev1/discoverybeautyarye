@@ -12,21 +12,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
 
 :root{
-  /* Discovery Beauty palette
-     EBD4CB rose-nude | DA9F93 dusty rose | B6465F raspberry | 890620 wine | 2C0703 oxblood */
-  --indigo:#890620;        /* wine: primary brand dark */
-  --indigo-dk:#2C0703;     /* oxblood: deepest dark, heroes & dark sections */
-  --teal:#DA9F93;          /* dusty rose: mid-tone */
-  --teal-dk:#B6465F;       /* raspberry: stronger mid / headings on light */
-  --teal-lt:#DA9F93;       /* dusty rose light */
-  --lime:#B6465F;          /* raspberry: live accent */
-  --lime-lt:#DA9F93;       /* dusty rose: soft accent */
-  --brown:#2C0703;         /* oxblood footer */
-  --gray:#8A7068;          /* warm taupe grey */
-  --gray-lt:#C2A89F;       /* rose-grey */
-  --gray-xlt:#EBD4CB;      /* rose-nude: hairlines & soft bg */
-  --body:#4A322E;          /* warm near-brown body text */
+  /* Discovery purple palette (sampled from brand logo gradient + card)
+     E3006B pink-magenta | BC0DA8 magenta | 8F2AE0 violet | 5E2166 deep grape | 33103A aubergine */
+  --indigo:#5E2166;        /* deep grape: primary brand dark */
+  --indigo-dk:#33103A;     /* aubergine: deepest dark, heroes & dark sections */
+  --teal:#A41CC4;          /* purple: mid-tone */
+  --teal-dk:#8F2AE0;       /* violet: stronger mid / headings on light */
+  --teal-lt:#C77FE0;       /* light violet */
+  --lime:#E3006B;          /* Discovery pink-magenta: live accent */
+  --lime-lt:#F06FB0;       /* soft pink accent */
+  --brown:#33103A;         /* aubergine footer */
+  --gray:#7E6A85;          /* muted mauve grey */
+  --gray-lt:#B6A3BD;       /* light mauve */
+  --gray-xlt:#E9DEEC;      /* pale lilac: hairlines & soft bg */
+  --body:#3A2A40;          /* deep mauve-brown body text */
   --paper:#FFFFFF;
+  --disco:#5E2166;         /* Discovery purple: deep */
+  --disco-br:#8F2AE0;      /* Discovery purple: bright */
 }
 
 *{margin:0;padding:0;box-sizing:border-box;}
@@ -44,7 +46,7 @@ h1,h2,h3,h4,.numeral{font-family:'Abril Fatface',serif;font-weight:400;}
 /* ---------- NAV ---------- */
 nav{
   position:fixed;top:0;left:0;right:0;z-index:100;
-  background:rgba(44,7,3,0.97);
+  background:rgba(51,16,58,0.97);
   backdrop-filter:blur(8px);
   display:flex;align-items:center;justify-content:space-between;
   padding:0 36px;height:60px;
@@ -78,7 +80,7 @@ h2.section-title{font-size:40px;color:var(--indigo-dk);line-height:1.1;margin-bo
 }
 .hero::after{
   content:"";position:absolute;right:-160px;top:-160px;width:520px;height:520px;
-  border-radius:50%;background:radial-gradient(circle,rgba(182,70,95,0.28),transparent 65%);
+  border-radius:50%;background:radial-gradient(circle,rgba(143,42,224,0.30),transparent 65%);
 }
 .hero .wrap{position:relative;z-index:2;}
 .hero .eyebrow{
@@ -118,7 +120,7 @@ h2.section-title{font-size:40px;color:var(--indigo-dk);line-height:1.1;margin-bo
 .eq-line b{color:var(--indigo);font-weight:600;}
 
 /* ---------- WHY ECONOMICS / BASE ---------- */
-.alt{background:#FBF4F1;}
+.alt{background:#F7F1F9;}
 .two-col{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;}
 @media(max-width:860px){.two-col{grid-template-columns:1fr;gap:32px;}}
 .base-list{list-style:none;}
@@ -164,7 +166,7 @@ h2.section-title{font-size:40px;color:var(--indigo-dk);line-height:1.1;margin-bo
 }
 .tbl thead th:last-child,.tbl tbody td:last-child{text-align:right;}
 .tbl tbody td{padding:14px 18px;border-bottom:1px solid var(--gray-xlt);color:var(--body);}
-.tbl tbody tr:nth-child(even){background:#FBF4F1;}
+.tbl tbody tr:nth-child(even){background:#F7F1F9;}
 .tbl tbody td.yr{font-weight:600;color:var(--indigo-dk);}
 .tbl tbody td .num{font-family:'Abril Fatface',serif;font-size:19px;color:var(--teal-dk);}
 .tbl tfoot td{padding:16px 18px;background:var(--lime);color:#fff;font-weight:600;}
@@ -188,14 +190,17 @@ h2.section-title{font-size:40px;color:var(--indigo-dk);line-height:1.1;margin-bo
 .pc-card{border-radius:12px;padding:28px 26px;color:#fff;position:relative;overflow:hidden;}
 .pc-card.pharmacy{background:var(--indigo);}        /* wine 890620 */
 .pc-card.woolies{background:var(--indigo-dk);}       /* oxblood */
+.pc-card.woolies::before{background:var(--disco-br);} /* Discovery purple accent */
 .pc-card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:5px;background:var(--lime);}
 .pc-card .pc-h{font-family:'Montserrat';font-weight:700;font-size:13px;letter-spacing:1px;text-transform:uppercase;color:var(--lime-lt);margin-bottom:12px;}
 .pc-card p{font-size:14.5px;line-height:1.6;color:rgba(255,255,255,0.86);font-weight:300;}
+.pc-card p.pc-rs{margin-top:14px;padding-top:14px;border-top:1px solid rgba(143,42,224,0.45);}
+.pc-card p.pc-rs::before{content:"";display:inline-block;width:18px;height:2px;background:var(--disco-br);vertical-align:middle;margin-right:8px;margin-bottom:3px;}
 
 /* ---------- DIFFERENTIATORS ---------- */
 .diff-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
 @media(max-width:860px){.diff-grid{grid-template-columns:1fr;}}
-.diff{display:flex;gap:18px;padding:22px;border-radius:10px;background:#FBF4F1;border:1px solid var(--gray-xlt);}
+.diff{display:flex;gap:18px;padding:22px;border-radius:10px;background:#F7F1F9;border:1px solid var(--gray-xlt);}
 .diff:first-child{background:var(--indigo);border-color:var(--indigo);}
 .diff:first-child .n{color:rgba(255,255,255,0.55);}
 .diff:first-child .tx b{color:#fff;}
@@ -203,16 +208,18 @@ h2.section-title{font-size:40px;color:var(--indigo-dk);line-height:1.1;margin-bo
 .diff .n{font-family:'Abril Fatface',serif;font-size:30px;color:var(--indigo);flex:0 0 40px;line-height:1;}
 .diff .tx b{display:block;font-family:'Montserrat';font-weight:600;color:var(--indigo-dk);font-size:15px;margin-bottom:4px;}
 .diff .tx span{font-size:13.5px;color:var(--gray);line-height:1.5;}
+.diff.diff-disco{border-left:3px solid var(--disco-br);}
+.diff.diff-disco .n{color:var(--disco);}
 
 /* ---------- RETAIL MEDIA FEATURE ---------- */
 .feature{background:var(--indigo-dk);color:#fff;border-radius:16px;padding:48px 44px;position:relative;overflow:hidden;}
-.feature::after{content:"";position:absolute;right:-120px;bottom:-120px;width:380px;height:380px;border-radius:50%;background:radial-gradient(circle,rgba(218,159,147,0.26),transparent 65%);}
+.feature::after{content:"";position:absolute;right:-120px;bottom:-120px;width:380px;height:380px;border-radius:50%;background:radial-gradient(circle,rgba(164,28,196,0.24),transparent 65%);}
 .feature .wrap-inner{position:relative;z-index:2;}
 .feature .ftag{font-size:11.5px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--lime);margin-bottom:12px;}
 .feature h3{font-size:32px;margin-bottom:16px;color:#fff;}
 .feature p{font-size:15.5px;color:rgba(255,255,255,0.82);font-weight:300;max-width:720px;margin-bottom:14px;}
 .feature .pill-row{display:flex;gap:14px;flex-wrap:wrap;margin-top:24px;}
-.feature .pill{background:rgba(255,255,255,0.08);border:1px solid rgba(218,159,147,0.5);border-radius:30px;padding:10px 20px;font-size:13px;font-weight:500;}
+.feature .pill{background:rgba(255,255,255,0.08);border:1px solid rgba(199,127,224,0.5);border-radius:30px;padding:10px 20px;font-size:13px;font-weight:500;}
 .feature .pill b{color:var(--lime);}
 
 /* ---------- PHASING ---------- */
@@ -246,7 +253,7 @@ h2.section-title{font-size:40px;color:var(--indigo-dk);line-height:1.1;margin-bo
 .exit-grid{display:grid;grid-template-columns:1.1fr 0.9fr;gap:40px;align-items:center;}
 @media(max-width:860px){.exit-grid{grid-template-columns:1fr;}}
 .exit-metrics{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
-.exit-metrics .m{background:#FBF4F1;border:1px solid var(--gray-xlt);border-radius:10px;padding:22px;}
+.exit-metrics .m{background:#F7F1F9;border:1px solid var(--gray-xlt);border-radius:10px;padding:22px;}
 .exit-metrics .m .num{font-family:'Abril Fatface',serif;font-size:30px;color:var(--teal-dk);line-height:1;}
 .exit-metrics .m .lb{font-size:12.5px;color:var(--gray);margin-top:6px;}
 
@@ -254,7 +261,7 @@ h2.section-title{font-size:40px;color:var(--indigo-dk);line-height:1.1;margin-bo
 .risk{display:grid;grid-template-columns:1fr;gap:0;border:1px solid var(--gray-xlt);border-radius:12px;overflow:hidden;}
 .risk .row{display:grid;grid-template-columns:0.9fr 1.1fr;border-bottom:1px solid var(--gray-xlt);}
 .risk .row:last-child{border-bottom:none;}
-.risk .row .rk{padding:18px 22px;background:#FBF4F1;font-weight:600;color:var(--indigo-dk);font-size:14.5px;display:flex;align-items:center;}
+.risk .row .rk{padding:18px 22px;background:#F7F1F9;font-weight:600;color:var(--indigo-dk);font-size:14.5px;display:flex;align-items:center;}
 .risk .row .mt{padding:18px 22px;font-size:14px;color:var(--gray);line-height:1.5;}
 @media(max-width:680px){.risk .row{grid-template-columns:1fr;}.risk .row .rk{border-bottom:1px solid var(--gray-xlt);}}
 
@@ -478,16 +485,17 @@ footer b{color:rgba(255,255,255,0.85);font-weight:600;}
         <p>Clicks and Dis-Chem win on convenience and price, but their beauty branding is functional and forgettable. The opening is magnetic, break-out branding and communications: a beauty name people actually want to be seen carrying, with the kind of creative confidence the pharmacy aisle structurally cannot produce.</p>
       </div>
       <div class="pc-card woolies">
-        <div class="pc-h">Versus Woolworths Beauty</div>
+        <div class="pc-h">Versus Woolworths Beauty &amp; the right to win</div>
         <p>Woolworths is the closest local quality benchmark, but it reads established and skews older. This targets a younger consumer with a fresher, more contemporary experience, matched on product quality but sharper on culture, content and store feel.</p>
+        <p class="pc-rs">This is not starting from zero. Woolworths proves a trusted South African brand can stretch credibly into curated beauty, and Discovery has already run beauty retail directly through Red Square: the loyalty-and-retail muscle is proven, not theoretical.</p>
       </div>
     </div>
     <div class="diff-grid">
       <div class="diff"><div class="n">01</div><div class="tx"><b>Magnetic, break-out branding</b><span>Comms and identity built to be desired and shared, not just shopped: the single biggest gap left open by every pharmacy beauty offer.</span></div></div>
-      <div class="diff"><div class="n">02</div><div class="tx"><b>Member-priced beauty</b><span>The only place where being a Discovery member makes you visibly better off at the till, every visit.</span></div></div>
-      <div class="diff"><div class="n">03</div><div class="tx"><b>Behavioural rewards crossover</b><span>Beauty purchases feed Vitality status, and status unlocks beauty pricing: a flywheel no pure-play retailer has.</span></div></div>
-      <div class="diff"><div class="n">04</div><div class="tx"><b>Curated, not cluttered</b><span>An edited assortment that signals taste, versus the wall-of-SKUs pharmacy model.</span></div></div>
-      <div class="diff"><div class="n">05</div><div class="tx"><b>Content-led, influencer-native</b><span>Built for digital discovery from day one, not retrofitted onto a legacy retail format.</span></div></div>
+      <div class="diff diff-disco"><div class="n">02</div><div class="tx"><b>Content-led, influencer-native</b><span>Built for digital discovery from day one, not retrofitted onto a legacy retail format.</span></div></div>
+      <div class="diff"><div class="n">03</div><div class="tx"><b>Member-priced beauty</b><span>The only place where being a Discovery member makes you visibly better off at the till, every visit.</span></div></div>
+      <div class="diff"><div class="n">04</div><div class="tx"><b>Behavioural rewards crossover</b><span>Beauty purchases feed Vitality status, and status unlocks beauty pricing: a flywheel no pure-play retailer has.</span></div></div>
+      <div class="diff"><div class="n">05</div><div class="tx"><b>Curated, not cluttered</b><span>An edited assortment that signals taste, versus the wall-of-SKUs pharmacy model.</span></div></div>
       <div class="diff"><div class="n">06</div><div class="tx"><b>Phygital loyalty</b><span>One seamless identity across app, online and studio: the wallet and the beauty profile as a single record.</span></div></div>
     </div>
   </div>
